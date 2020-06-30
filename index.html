@@ -13,6 +13,11 @@
   <p id="displayName"></p>
   <p id="statusMessage"></p>
   <p id="getDecodedIDToken"></p>
+  <p id="getOS"></p>
+  <p id="getLanguage"></p>
+  <p id="isInClient"></p>
+  <p id="isLoggedIn"></p>
+
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     function runApp() {
@@ -22,6 +27,11 @@
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+
+        document.getElementById("getOS").innerHTML = '<b>OS:</b> ' + liff.getOS();
+        document.getElementById("getLanguage").innerHTML = '<b>Language:</b> ' + liff.getLanguage();
+        document.getElementById("isInClient").innerHTML = '<b>isInClient:</b> ' + liff.isInClient();
+        document.getElementById("isLoggedIn").innerHTML = '<b>isLoggedIn:</b> ' + liff.isLoggedIn();
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1654403364-5K8M2ve7" }, () => {
